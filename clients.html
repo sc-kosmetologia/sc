@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baza klientów</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Baza klientów</h1>
+        <div class="add-client-form">
+        <h2>Dodaj nowego klienta</h2>
+        <a href="index.html" class="btn btn-primary">Powrót do zabiegów</a>
+        <form id="client-form">
+            <label for="client-name">Imię i nazwisko:</label>
+            <input type="text" id="client-name" name="client-name" required>
+
+            <label for="birth-date">Data urodzenia:</label>
+            <input type="date" id="birth-date" name="birth-date">
+
+            <label for="phone-number">Numer telefonu:</label>
+            <input type="text" id="phone-number" name="phone-number">
+
+            <label for="location">Lokalizacja:</label>
+            <input type="text" id="location" name="location">
+
+            <label for="additional-info">Informacje dodatkowe:</label>
+            <textarea id="additional-info" name="additional-info"></textarea>
+
+        <button type="submit">Dodaj klienta</button>
+        </form>
+        </div>
+        <table id="clients-table">
+            <thead>
+                <tr>
+                    <th>Imię i nazwisko</th>
+                    <th>Data urodzenia</th>
+                    <th>Wiek</th>
+                    <th>Numer telefonu</th>
+                    <th>Lokalizacja</th>
+                    <th>Informacje dodatkowe</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Tutaj zostaną wstawione dane z get_clients.php -->
+            </tbody>
+        </table>
+    </div>
+    <script src="clients.js"></script>
+</body>
+</html>

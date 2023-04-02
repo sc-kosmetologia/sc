@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel zarządzania</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="password-container">
+        <h1>Autoryzacja</h1>
+        <form id="password-form">
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Zaloguj się</button>
+        </form>
+    </div>
+    <div class="container" style="display: none;">
+        <button onclick="location.href='clients.html'" type="button">
+         Baza klientów</button>
+        <button id="show-add-treatment-form" class="btn btn-primary">Dodaj zabieg</button>
+        <div id="add-treatment-form-container" style="display: none;">
+        <form id="treatment-form">
+            <label for="treatment-name">Rodzaj zabiegu:</label>
+            <select id="treatment-name" name="treatment-name" required>
+            <option value="MANICURE">MANICURE</option>
+            <option value="PEDICURE">PEDICURE</option>
+            <option value="MANICURE_PEDICURE">MANICURE I PEDICURE</option>
+            <option value="BOTOKS">BOTOKS</option>
+            <option value="KWAS HIALURONOWY">KWAS HIALURONOWY</option>
+            <option value="MEZOTERAPIA MIKROIGŁOWA">MEZOTERAPIA MIKROIGŁOWA</option>
+            <option value="MEZOTERAPIA IGŁOWA">MEZOTERAPIA IGŁOWA</option>
+            <option value="STYMULATOR">STYMULATOR</option>
+            <option value="MASAŻ RELAKSACYJNY">MASAŻ RELAKSACYJNY</option>
+            <option value="KOBIDO">KOBIDO</option>
+            <option value="HENNA">HENNA</option>
+            <option value="DEPILACJA">DEPILACJA</option>
+            <option value="KWASY">KWASY</option>
+            <option value="INNE ZABIEGI OCZYSZCZAJĄCE">INNE ZABIEGI OCZYSZCZAJĄCE</option>
+            </select>
+            <label for="client-name">Nazwa klienta:</label>
+            <select id="client-name" name="client-name" required>
+            <label for="treatment-date">Data i godzina:</label>
+            <input type="datetime-local" id="treatment-date" name="treatment-date" required>
+            <label for="treatment-price">Cena:</label>
+            <input type="number" id="treatment-price" name="treatment-price" required> zł
+            <label for="detailed-description">Opis szczegółowy:</label>
+            <input type="text" id="detailed-description" name="detailed-description" required>
+            <button type="submit">Dodaj zabieg</button>
+        </form>
+        </div>
+        <h2>Lista zabiegów</h2>
+        <div class="filter">
+            <label for="filter-client">Filtruj klientów:</label>
+            <select id="filter-client">
+                <option value="">Wszyscy</option>
+            </select>
+            <label for="filter-treatment">Filtruj zabiegi:</label>
+            <select id="filter-treatment">
+                <option value="">Wszystkie</option>
+            </select>
+            <label for="filter-date-start">Filtruj datę (od):</label>
+            <input type="date" id="filter-date-start">
+            <label for="filter-date-end">Filtruj datę (do):</label>
+            <input type="date" id="filter-date-end">
+
+        </div>
+        <table id="treatments-table">
+            <thead>
+                <tr>
+                    <th class="sortable" data-sort="treatment_name">Rodzaj zabiegu</th>
+                    <th class="sortable" data-sort="treatment_date">Data</th>
+                    <th class="sortable" data-sort="client_name">Imię i nazwisko klienta</th>
+                    <th class="sortable" data-sort="treatment_price">Cena</th>
+                    <th class="sortable" data-sort="detailed_description">Opis szczegółowy</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th id="total-price"></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #6c757d;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label, input, button {
+    margin: 10px 0;
+}
+
+input, button {
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-size: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 3px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #6c757d;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: #5a6268;
+}
+
+button.delete {
+    background-color: #f44336;
+}
+
+button.delete:hover {
+    background-color: #da190b;
+}
+
+/* Dodane style dla akcentów liliowych */
+button:focus, input:focus {
+    outline: none;
+    border: 2px solid #9966cc;
+}
+
+button[type="submit"] {
+    background-color: #9966cc;
+}
+
+button[type="submit"]:hover {
+    background-color: #7648bd;
+}
+
+/* Responsywność */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+}
